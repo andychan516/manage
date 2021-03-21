@@ -39,8 +39,7 @@ public class UserInfoController extends BaseController {
     @RequestMapping("/userView")
     @RequiresPermissions("userInfo:view")//权限管理;
     public String view(){
-
-    	logger.info("加载userInfo....");
+    	  logger.info("加载userInfo....");
         return "/base/userInfo";
     }
 
@@ -54,7 +53,7 @@ public class UserInfoController extends BaseController {
     @ResponseBody
     @RequiresPermissions("userInfo:view")//权限管理;
     public ModelMap getList(DataTablesParam dataTablesParam, String username){
-    	logger.info("权限管理列表："+username);
+      	logger.info("权限管理列表："+username);
         ModelMap map= new ModelMap();
         Page<UserInfo> pageRe=null;
         try {
@@ -63,7 +62,7 @@ public class UserInfoController extends BaseController {
             }else{
                 pageRe= userInfoService.findByUserName(username, BuildPageRequest.getPageRequest(dataTablesParam.getPageNum(), dataTablesParam.getiDisplayLength(), Sort.Direction.DESC, "id"));
             }
-        	JsonConfig config = new JsonConfig();
+        JsonConfig config = new JsonConfig();
     		//忽视loginPermissionInfo、roleInfoList数组【不添加此项json解析会报错】
     		config.setExcludes(new String[]{"roleList"});
     		JSONArray json =JSONArray.fromObject(pageRe.getContent(),config);

@@ -74,11 +74,11 @@ public class UserInfo implements Serializable {
 		return state;
 	}
 
-	public void setState(int state) {
+	  public void setState(int state) {
 		this.state = state;
 	}
 
-	public List<SysRole> getRoleList() {
+	  public List<SysRole> getRoleList() {
         return roleList;
     }
 
@@ -86,27 +86,27 @@ public class UserInfo implements Serializable {
         this.roleList = roleList;
     }
 
-	public Date getCreateDate() {
+	  public Date getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(Date createDate) {
+	  public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
 
-	public Date getUpdateDate() {
+	  public Date getUpdateDate() {
 		return updateDate;
 	}
 
-	public void setUpdateDate(Date updateDate) {
+	  public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
 
-	public String getRemarks() {
+	  public String getRemarks() {
 		return remarks;
 	}
 
-	public void setRemarks(String remarks) {
+	  public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
 
